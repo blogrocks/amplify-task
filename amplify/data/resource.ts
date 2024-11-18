@@ -19,6 +19,7 @@ const schema = a.schema({
   Todo: a
     .model({
       content: a.string(),
+      group: a.string(), // 添加群组字段
     }).authorization(allow => [allow.owner()]),
 });
 
