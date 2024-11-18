@@ -16,6 +16,10 @@ const schema = a.schema({
     .authorization((allow) => [allow.group("ADMINS")])
     .handler(a.handler.function(addUserToGroup))
     .returns(a.json()),
+  Group: a
+    .model({
+      name: a.string(),
+    }).authorization((allow) => [allow.owner()]),
   Todo: a
     .model({
       content: a.string(),
